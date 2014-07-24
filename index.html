@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bootstrap 3, from LayoutIt!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+	<!--script src="js/less-1.3.3.min.js"></script-->
+	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="img/favicon.png">
+  
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			$("#btn-login").click(function() {
+				
+				/*$.ajax({
+					url: 'http://sportivas.com.co/_common/_ajax/registro.php',
+					type: "get", // podría ser get, post, put o delete.
+
+					data: {nombre:'usuario1', a : 'apellido', e : 'u@gmail.com',f : '01/02/2014',c : '123',k : 'nickname'}, // datos a pasar al servidor, en caso de necesitarlo
+					async: false,
+					success: function (data, textStatus, jqXHR) {
+						
+						console.log(data);
+						alert(data);
+						
+					},
+					error: function (jqXHR, textStatus, errorThrown) {
+						console.log(jqXHR); console.log(textStatus); console.log(errorThrown);
+					}
+				});*/
+	
+				
+				$("#panelLogin").hide();
+				$("#panelPrincipal").show();
+			});
+			
+		});
+	</script>
+<body>
+	
+    <div id="panelLogin" class="container">    
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title">Sportivas</div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">¿Has olvidado tu contraseña?</a></div>
+                    </div>     
+
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                            
+                        <form id="loginform" class="form-horizontal" role="form">
+                                    
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Nombre de usuario o email">                                        
+                                    </div>
+                                
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                        <input id="login-password" type="password" class="form-control" name="password" placeholder="Contraseña">
+                                    </div>
+                                    
+
+                                
+                            <div class="input-group">
+                                      <div class="checkbox">
+                                        <label>
+                                          <input id="login-remember" type="checkbox" name="remember" value="1"> Recordarme
+                                        </label>
+                                      </div>
+                                    </div>
+
+
+                                <div style="margin-top:10px" class="form-group">
+                                    <!-- Button -->
+
+                                    <div class="col-sm-12 controls">
+                                      <a id="btn-login" href="#" class="btn btn-success">Entrar  </a>
+                                      <a id="btn-fblogin" href="#" class="btn btn-primary">Login con Facebook</a>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="col-md-12 control">
+                                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                            No tienes una cuenta! 
+                                        <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                            Registrate
+                                        </a>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </form>     
+
+
+
+                        </div>                     
+                    </div>  
+        </div>
+        <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Registro</div>
+                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
+                        </div>  
+                        <div class="panel-body" >
+                            <form id="signupform" class="form-horizontal" role="form">
+                                
+                                <div id="signupalert" style="display:none" class="alert alert-danger">
+                                    <p>Error:</p>
+                                    <span></span>
+                                </div>
+                                    
+                                
+                                  
+                               
+                                    
+                                <div class="form-group">
+                                    <label for="firstname" class="col-md-3 control-label">Nombre</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="firstname" placeholder="Nombre">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastname" class="col-md-3 control-label">Apellidos</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="lastname" placeholder="Apellidos">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-md-3 control-label">Email</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="email" placeholder="Dirección de email">
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                                    <label for="fecha" class="col-md-3 control-label">Fecha de nacimiento</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="fecha" placeholder="01/01/2014">
+                                    </div>
+                                </div>
+								<div class="form-group">
+                                    <label for="password" class="col-md-3 control-label">Contraseña</label>
+                                    <div class="col-md-9">
+                                        <input type="password" class="form-control" name="passwd" placeholder="Contraseña">
+                                    </div>
+                                </div>
+                                    
+                                
+
+                                <div class="form-group">
+                                    <!-- Button -->                                        
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Registrar</button>
+                                        <span style="margin-left:8px;">o</span>  
+                                    </div>
+                                </div>
+                                
+                                <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
+                                    
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Registro con Facebook</button>
+                                    </div>                                           
+                                        
+                                </div>
+                                
+                                
+                                
+                            </form>
+                         </div>
+                    </div>
+
+               
+               
+                
+         </div> 
+    </div>
+    
+	<div style="height:60px"></div>
+<div id="panelPrincipal" class="container" style="display:none">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<div class="navbar-header">
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">Sportivas</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="#">Mi Perfil</a>
+						</li>
+						<li>
+							<a href="#">Eventos</a>
+						</li>
+						<li class="dropdown">
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mas...<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">Lugares</a>
+								</li>
+								<li>
+									<a href="#">Amigos</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									<a href="#">mas</a>
+								</li>
+								<li class="divider">
+								</li>
+								
+							</ul>
+						</li>
+					</ul>
+					
+				</div>
+				
+			</nav>
+		</div>
+	</div>
+    <div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="media well">
+				 <a href="#" class="pull-left"><img src="http://www.40defiebre.com/wp-content/uploads/2013/12/Captura-de-pantalla-2013-12-08-a-las-12.41.00-64x64.png" class="media-object" alt='' /></a>
+				<div class="media-body">
+					<h4 class="media-heading">
+						Maria
+					</h4> Grandioso partido el de hoy!
+					<div class="media">
+						 <a href="#" class="pull-left"><img src="http://www.40defiebre.com/wp-content/uploads/2013/08/photo-64x64.png" class="media-object" alt='' /></a>
+						<div class="media-body">
+							<h4 class="media-heading">
+								Ashlee
+							</h4> Gracias por la invitación.
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="media well">
+				 <a href="#" class="pull-left"><img src="http://f3.trucoteca.com/logros/beijing-2008-el-videojuego-oficial-de-los-juegos/xbox-360-gran-clase-en-ciclismo_bn.jpg" class="media-object" alt='' /></a>
+				<div class="media-body">
+					<h4 class="media-heading">
+						Eventos
+					</h4> El proximo domingo encuentro de ciclismo femenino en la av 23. Los esperamos!
+					
+					</div>
+                    <img alt="32x32" src="http://www.elnortedecastilla.es/prensa/noticias/200807/20/fotos/213291.jpg" />
+			</div>
+            
+            <div class="media well">
+				 <a href="#" class="pull-left"><img src="http://diariocontraste.com/es/wp-content/uploads/2014/04/champs-tienda-deportiva_20120216105905-64x64.jpg" class="media-object" alt='' /></a>
+				<div class="media-body">
+					<h4 class="media-heading">
+						Tienda deportiva
+					</h4> Promoción  2x1!
+                    </div>
+					<img alt="32x32" src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xaf1/t1.0-9/p526x296/10408518_817935554891832_6768717243071369415_n.jpg" style="width: 70%;"/>
+					
+			</div>
+
+</div>
+
+
+</body>
+</html>
