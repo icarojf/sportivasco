@@ -27,37 +27,84 @@
   <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
   <link rel="shortcut icon" href="img/favicon.png">
   
+	
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/md5.js"></script>
+	
 </head>
 
 	<script type="text/javascript">
 		$( document ).ready(function() {
+		
+		
+		
 			$("#btn-login").click(function() {
-				
-				/*$.ajax({
-					url: 'http://sportivas.com.co/_common/_ajax/registro.php',
-					type: "get", // podría ser get, post, put o delete.
-
-					data: {nombre:'usuario1', a : 'apellido', e : 'u@gmail.com',f : '01/02/2014',c : '123',k : 'nickname'}, // datos a pasar al servidor, en caso de necesitarlo
-					async: false,
-					success: function (data, textStatus, jqXHR) {
-						
-						console.log(data);
-						alert(data);
-						
-					},
-					error: function (jqXHR, textStatus, errorThrown) {
-						console.log(jqXHR); console.log(textStatus); console.log(errorThrown);
-					}
-				});*/
-	
-				
+			
 				$("#panelLogin").hide();
-				$("#panelPrincipal").show();
+											$("#panelPrincipal").show();
+				/*try{
+				
+
+					$.ajax({
+						type: "GET",
+						crossDomain: true,
+						contentType: "application/json; charset=utf-8", 
+						headers: { 'Access-Control-Allow-Origin': '*' },
+						url: 'http://sportivas.com.co/_common/_ajax/login.php?callback=?',
+						dataType: 'json', 
+						async:false,
+						data:{u:'icarojf@gmail.com', p:'fbc71ce36cc20790f2eeed2197898e71'},
+						
+						success: function(msg) { 
+								AjaxOK(msg);
+							 },
+							 error: AjaxError
+						});
+				
+				}catch(exception){alert(exception)}
+
+				function AjaxOK(result) {
+							alert(result.d);
+						} 
+						function AjaxError(result) { 
+							 alert("ERROR " + result.status + ' ' + result.statusText);
+						 } */
 			});
 			
+			
+			$("#btn-signup").click(function() {
+				try{
+					$.ajax({
+						type: "GET",
+						crossDomain: true,
+						contentType: "application/json; charset=utf-8", 
+						headers: { 'Access-Control-Allow-Origin': '*' },
+						url: 'http://sportivas.com.co/_common/_ajax/registro.php?callback=?',
+						dataType: 'jsonp', 
+						async:false,
+						data: {n:'usuario1', a : 'apellido', e : 'u@gmail.com',f : '01/02/2014',c : CryptoJS.MD5('123'), k : 'nickname'}, 
+						
+						success: function (data, textStatus, jqXHR) {
+							
+							console.log(data);
+							alert(data);
+											$("#panelLogin").hide();
+											$("#panelPrincipal").show();
+							
+						},
+						error: function (jqXHR, textStatus, errorThrown) {
+							alert('error:'+jqXHR)
+							alert('error:'+textStatus)
+							alert('error:'+errorThrown)
+							console.log(jqXHR); console.log(textStatus); console.log(errorThrown);
+						}
+					});
+	
+				}catch(exception){alert(exception)}
+
+			});
 		});
 	</script>
 <body>
@@ -129,7 +176,7 @@
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             <div class="panel-title">Registro</div>
-                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
+                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Registro</a></div>
                         </div>  
                         <div class="panel-body" >
                             <form id="signupform" class="form-horizontal" role="form">
