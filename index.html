@@ -36,11 +36,11 @@
 		$( document ).ready(function() {
 			$("#btn-login").click(function() {
 				
-				$.ajax({
+				/*$.ajax({
 					url: 'http://sportivas.com.co/_common/_ajax/registro.php',
 					type: "get", // podría ser get, post, put o delete.
-					//dataType: "jsonp",
-					data:{u:qw12,p:dfdsfdfs21312},//data: {nombre:'usuario1', a : 'apellido', e : 'u@gmail.com',f : '01/02/2014',c : '123',k : 'nickname'}, // datos a pasar al servidor, en caso de necesitarlo
+
+					data: {nombre:'usuario1', a : 'apellido', e : 'u@gmail.com',f : '01/02/2014',c : '123',k : 'nickname'}, // datos a pasar al servidor, en caso de necesitarlo
 					async: false,
 					success: function (data, textStatus, jqXHR) {
 						
@@ -51,10 +51,11 @@
 					error: function (jqXHR, textStatus, errorThrown) {
 						console.log(jqXHR); console.log(textStatus); console.log(errorThrown);
 					}
-				});
+				});*/
 	
 				
-				
+				$("#panelLogin").hide();
+				$("#panelPrincipal").show();
 			});
 			
 		});
